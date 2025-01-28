@@ -6,6 +6,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
 const routes = require('./src/routes');
+const path = require('path');
 app.use(cors());
 
 app.use(
@@ -15,7 +16,7 @@ app.use(
         allowedHeaders: ["Content-Type"],
     })
 );
-
+app.use(express.static(path.join(__dirname, 'public')));
 const server = http.createServer(app);
 initializeSocket(server);
 

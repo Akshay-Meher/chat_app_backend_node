@@ -6,6 +6,7 @@ const fs = require('fs');
 
 const tempDir = path.join(__dirname, '../../public/temp');
 
+console.log("tempDir");
 if (!fs.existsSync(tempDir)) {
     fs.mkdirSync(tempDir, { recursive: true });
 }

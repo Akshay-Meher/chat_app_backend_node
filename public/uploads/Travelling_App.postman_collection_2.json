@@ -1,0 +1,972 @@
+{
+	"info": {
+		"_postman_id": "73623f0d-a1a8-4953-91ee-08b8aedeca72",
+		"name": "Travelling App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34611729"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "first_name",
+							"value": "Pallavi",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Gaikwad",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "pallavigaikwad24.pg@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pallavi@123",
+							"type": "text"
+						},
+						{
+							"key": "confirm_password",
+							"value": "Pallavi@123",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "India",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "8747890345",
+							"type": "text"
+						},
+						{
+							"key": "user_type",
+							"value": "user",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "gaikwadpallavi263@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pallavi@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Hotel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Seaside Retreat",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "India",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Kochi, Kerala, 682001",
+							"type": "text"
+						},
+						{
+							"key": "price_per_night",
+							"value": "5500",
+							"type": "text"
+						},
+						{
+							"key": "available_rooms",
+							"value": "9",
+							"type": "text"
+						},
+						{
+							"key": "services",
+							"value": "[\"wifi\", \"free breakfast\", \"pool\", \"sea view\"]",
+							"type": "text"
+						},
+						{
+							"key": "hotel_img",
+							"type": "file",
+							"src": [
+								"/C:/Users/PallaviGaikwad/Pictures/Screenshots/Screenshot 2024-12-09 142213.png",
+								"/C:/Users/PallaviGaikwad/Pictures/sebastian-unrau-CoD2Q92UaEg-unsplash.jpg",
+								"/C:/Users/PallaviGaikwad/Pictures/vincent-guth-uhoILl3HUZM-unsplash.jpg",
+								"/C:/Users/PallaviGaikwad/Pictures/kalen-emsley-_LuLiJc1cdo-unsplash.jpg"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/hotel/add-hotel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hotel",
+						"add-hotel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hotel Booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "hotel_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "check_in_date",
+							"value": "2025-04-15",
+							"type": "text"
+						},
+						{
+							"key": "check_out_date",
+							"value": "2025-04-19",
+							"type": "text"
+						},
+						{
+							"key": "number_of_rooms",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "total_price",
+							"value": "15000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/hotel/hotel-booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hotel",
+						"hotel-booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Flight",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "flight_number",
+							"value": "AI2024",
+							"type": "text"
+						},
+						{
+							"key": "airline",
+							"value": "Air India",
+							"type": "text"
+						},
+						{
+							"key": "departure_airport",
+							"value": "NTGA",
+							"type": "text"
+						},
+						{
+							"key": "arrival_airport",
+							"value": "YARY",
+							"type": "text"
+						},
+						{
+							"key": "departure_time",
+							"value": "10:30:00",
+							"type": "text"
+						},
+						{
+							"key": "arrival_time",
+							"value": "22:30:00",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "500.75",
+							"type": "text"
+						},
+						{
+							"key": "seats_available",
+							"value": "150",
+							"type": "text"
+						},
+						{
+							"key": "departure_date",
+							"value": "2025-03-01",
+							"type": "text"
+						},
+						{
+							"key": "arrival_date",
+							"value": "2025-03-01",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/flight/add-flight",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"flight",
+						"add-flight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Flight Info",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "flight_number",
+							"value": "AI2024",
+							"type": "text"
+						},
+						{
+							"key": "airline",
+							"value": "Air India",
+							"type": "text"
+						},
+						{
+							"key": "departure_airport",
+							"value": "NTGA",
+							"type": "text"
+						},
+						{
+							"key": "arrival_airport",
+							"value": "YARY",
+							"type": "text"
+						},
+						{
+							"key": "departure_time",
+							"value": "10:30:00",
+							"type": "text"
+						},
+						{
+							"key": "arrival_time",
+							"value": "22:30:00",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "500.75",
+							"type": "text"
+						},
+						{
+							"key": "seats_available",
+							"value": "150",
+							"type": "text"
+						},
+						{
+							"key": "departure_date",
+							"value": "2025-03-01",
+							"type": "text"
+						},
+						{
+							"key": "arrival_date",
+							"value": "2025-03-01",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/flight/update-flight-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"flight",
+						"update-flight-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flight Booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "flight_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "number_of_seats",
+							"value": "110",
+							"type": "text"
+						},
+						{
+							"key": "total_price",
+							"value": "100000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/flight/flight-booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"flight",
+						"flight-booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flight Search",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "departure_airport",
+							"value": "NTGA",
+							"type": "text"
+						},
+						{
+							"key": "destination_airport",
+							"value": "YARY",
+							"type": "text"
+						},
+						{
+							"key": "start_date",
+							"value": "2025-03-05",
+							"type": "text"
+						},
+						{
+							"key": "total_seats",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/flight/search-flight",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"flight",
+						"search-flight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Hotel Info",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Naad Beach Resort (murud)",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "India",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "location",
+							"value": "Khalchi Pakhadi, Opposite Lakshminarayan Temple, Taluka Dapoli, District Ratnagiri, Murud, Maharashtra 415713",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "price_per_night",
+							"value": "5000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "available_rooms",
+							"value": "4",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "services",
+							"value": "[\"wifi\", \"Free Breakfast\"]",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/hotel/update-hotel-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hotel",
+						"update-hotel-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forget Password email auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "kavyachavan",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/email-authentication",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"email-authentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forget Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "password",
+							"value": "Pasldvbdvb",
+							"type": "text"
+						},
+						{
+							"key": "confirm_password",
+							"value": "sbubiiie",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/forgetpassword/query?token=b18d7d56-56f3-4017-94f9-6abd606ead87",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"forgetpassword",
+						"query"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "b18d7d56-56f3-4017-94f9-6abd606ead87"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hotel Search",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "India",
+							"type": "text"
+						},
+						{
+							"key": "start_date",
+							"value": "2025-02-22",
+							"type": "text"
+						},
+						{
+							"key": "end_date",
+							"value": "2025-02-25",
+							"type": "text"
+						},
+						{
+							"key": "rooms",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "topTenRecord",
+							"value": "true",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/search/hotels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"search",
+						"hotels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Email Verification Update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/email-verification/f9831f25-78df-4fac-8fb2-e17bfc6092f5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"email-verification",
+						"f9831f25-78df-4fac-8fb2-e17bfc6092f5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Integration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "T-Shirt",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Black T-Shirt",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "5000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/createOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lazy Loading",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "count",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "India",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/hotel/gethotels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hotel",
+						"gethotels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OTP Username",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "pallavigaikwad24.pg@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/send-otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"send-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OTP Varification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "otp",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/otp-login/pallavigaikwad24.pg@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"otp-login",
+						"pallavigaikwad24.pg@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user-info/all-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user-info",
+						"all-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Images Into Exist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "hotel_img",
+							"type": "file",
+							"src": "/C:/Users/PallaviGaikwad/Pictures/vincent-guth-uhoILl3HUZM-unsplash.jpg"
+						},
+						{
+							"key": "hotel_id",
+							"value": "23",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/hotel/add-hotel-images",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hotel",
+						"add-hotel-images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Hotel Images",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "hotel_id",
+							"value": "18",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/hotel/delete-hotel-image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hotel",
+						"delete-hotel-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Custom Image",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "hotel_id",
+							"value": "18",
+							"type": "text"
+						},
+						{
+							"key": "imageIdx",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/hotel/delete-custome-image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hotel",
+						"delete-custome-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Hotel Info",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "hotel_id",
+							"value": "23",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/hotel//delete-hotel-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hotel",
+						"",
+						"delete-hotel-info"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

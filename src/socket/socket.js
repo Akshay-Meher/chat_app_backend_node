@@ -82,7 +82,7 @@ const initializeSocket = (server) => {
 
             console.log("groupMessage", data);
 
-            const { groupId, senderId, content } = data;
+            const { groupId, senderId, content, filename, file_url, filetype, filesize } = data;
 
             if (!groupId && !senderId) {
                 console.log("ERRR: groupId or senderId null",)
@@ -99,6 +99,7 @@ const initializeSocket = (server) => {
                 sender_id: senderId,
                 receiver_id: null,
                 content: content,
+                filename, file_url, filetype, filesize
             });
 
             // Fetch sender's information
@@ -113,6 +114,7 @@ const initializeSocket = (server) => {
                 content: newMessage.content,
                 createdAt: newMessage.createdAt,
                 sender: sender ? { id: sender.id, username: sender.name, email: sender.email } : null,
+                filename, file_url, filetype, filesize
             };
 
             // console.log("messageToEmit", messageToEmit);

@@ -1,5 +1,9 @@
 const { validationResult } = require('express-validator');
 const { Message, User } = require('../models');
+const path = require('path');
+const fs = require('fs');
+const { generateUniqueFilename } = require('../utils/fileOperationsHelper');
+const { sendResponse } = require('../utils/responseHandler');
 
 const sendMessage = async (req, res) => {
 
@@ -44,6 +48,57 @@ const uploadFile = async (req, res) => {
 };
 
 
+
+
+const uploadFiles = async (req, res) => {
+    try {
+
+        if (!req.files || req.files.length === 0) {
+            return res.status(400).send('No files uploaded');
+        }
+
+        // Step 1: Move files to 'public/uploads' directory after successful upload
+        const filePaths = [];
+        const fileNames = [];
+        const fileTypes = [];
+        const fileSizes = [];
+        const tempDir = path.join(__dirname, '../../public/temp');
+        const uploadDir = path.join(__dirname, '../../public/uploads');
+
+        for (const file of req.files) {
+
+            const mimeType = file.mimetype;
+            const fileSize = file.size;
+            const tempFilePath = path.join(tempDir, file.filename);
+            const originalName = file.originalname.replace(/\s+/g, '_');
+            let uploadFileName = generateUniqueFilename(originalName, uploadDir);
+            const uploadFilePath = path.join(uploadDir, uploadFileName);
+            if (!fs.existsSync(uploadDir)) {
+                fs.mkdirSync(uploadDir, { recursive: true });
+            }
+            await new Promise((resolve, reject) => {
+                fs.rename(tempFilePath, uploadFilePath, (err) => {
+                    if (err) reject(err);
+                    else {
+                        filePaths.push(`/uploads/${uploadFileName}`);
+                        fileNames.push(originalName);
+                        fileTypes.push(mimeType);
+                        fileSizes.push(fileSize);
+                        resolve();
+                    }
+                });
+            });
+        }
+
+        return sendResponse(res, "OK", "Files uploaded and moved successfully", {
+            filePaths: filePaths,
+            fileNames, fileTypes, fileSizes
+        });
+
+    } catch (error) {
+        res.status(500).send({ message: 'Error moving files', error: error.message });
+    }
+}
 
 const getMessagesByGroupId = async (req, res) => {
     const { groupId } = req.params;
@@ -112,5 +167,5 @@ const getMessagesByUser = async (req, res) => {
     }
 };
 
-module.exports = { uploadFile, sendMessage, getMessagesByGroupId, getMessagesByUser };
+module.exports = { uploadFile, sendMessage, getMessagesByGroupId, getMessagesByUser, uploadFiles };
 
